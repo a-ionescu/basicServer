@@ -108,18 +108,12 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(this, "Accept", Toast.LENGTH_LONG).show();
                     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-                    while (recordData = true) {
-                        if (recordNmea = true) {
-                            //bw.write("Message from the server");
-                            bw.write(nmeaData);
-                            //Toast.makeText(this, "Message from the server", Toast.LENGTH_LONG).show();
-                            //Insert new line \n
-                            bw.newLine();
-                            //Send the message
-                            bw.flush();
-                        }
-                        break;
-                    }
+                    bw.write(nmeaData);
+                    //Toast.makeText(this, "Message from the server", Toast.LENGTH_LONG).show();
+                    //Insert new line \n
+                    bw.newLine();
+                    //Send the message
+                    bw.flush();
                     //Receive a message from client
                     //BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     //System.out.println("Message from the client: " + br.readLine());
